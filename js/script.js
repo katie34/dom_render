@@ -11,6 +11,9 @@ var table = document.createElement('TABLE');
 //creating a table body
 var tblB = document.createElement('TBODY');
 
+//appending tablebody to the table
+table.appendChild(tblB);
+
 //Add a row
 function addR() {
     alert("Clicked Add Row")
