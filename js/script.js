@@ -8,6 +8,9 @@ var body = document.getElementsbyTagName("body")[0];
 //creating the table
 var table = document.createElement('TABLE');
 
+//creating a table body
+var tblB = document.createElement('TBODY');
+
 //Add a row
 function addR() {
     alert("Clicked Add Row")
