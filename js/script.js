@@ -12,6 +12,16 @@ var body = document.getElementsbyTagName("body");
     fillColor = body[5],
     clearAllSquares = body[6];
 
+//create button functions
+addRow.addEventListener("click", addR);
+addCol.addEventListener("click", addC);
+removeRow.addEventListener("click", removeR);
+removeCol.addEventListener("click", removeC);
+fillColorAll.addEventListener("click", fillU);
+fillColor.addEventListener("click", fill);
+clearAllSquares.addEventListener("click", addR);
+addRow.addEventListener("click", clearAll);
+
 //creating the table
 var table = document.createElement('TABLE');
 
