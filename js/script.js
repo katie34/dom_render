@@ -12,17 +12,8 @@ fillColor.addEventListener("click", fill);
 clearAllSquares.addEventListener("click", addR);
 addRow.addEventListener("click", clearAll);
 
-//creating the table
-let table = document.createElement("table");
-
 //creating a table body
 let grid = document.getElementById("grid");
-
-//squares 
-let squares = document.getElementsByClassName("squares");
-
-//appending tablebody to the table
-grid.appendChild(table);
 
 //Add a row
 function addR() {
