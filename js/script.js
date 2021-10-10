@@ -1,6 +1,7 @@
 let numRows = 0;
 let numCols = 0;
 let colorSelected; 
+//rememeber to use correct function names
 
 //create button functions
 addRow.addEventListener("click", addR);
@@ -14,17 +15,24 @@ addRow.addEventListener("click", clearAll);
 
 //creating a table body
 let grid = document.getElementById("grid");
+let newRow = document.createElement("tr");
+let square = document.createElement("td");
 
 //Add a row
 function addR() {
     alert("Clicked Add Row")
+    numRows++;
     let newRow = document.createElement("tr");
-    newRow.classlist.add("row");
-    grid.appendChild(newRow);
+    newRow.classlist.add("R");
+    //grid.appendChild(newRow);
 
-    for (var i = 0; i < squares; i++){
-        newRow.appendChild(createSquare("squares"));
+    for (let i = 0; i < numCols; i++){
+        let square = document.createElement("td");
+        square.classList.add("C")
+        newRow.appendChild(createSquare("square"));
+        HTMLFormControlsCollection.log(numCols);
     }
+    document.getElementById("grid").appendChild(newRow);
 }
 //Add a column
 function addC() {
