@@ -2,16 +2,6 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
-//get first elements in the body
-var body = document.getElementsbyTagName("body");
-    addRow = body[0],
-    addCol = body[1],
-    removeRow = body[2],
-    removeCol = body[3],
-    fillColorAll = body[4],
-    fillColor = body[5],
-    clearAllSquares = body[6];
-
 //create button functions
 addRow.addEventListener("click", addR);
 addCol.addEventListener("click", addC);
