@@ -2,13 +2,24 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
+//get first element in the body
+var body = document.getElementsbyTagName("body")[0];
+
 //Add a row
 function addR() {
     alert("Clicked Add Row")
     for (var i = 0; i < 10; i++)
     var tr = document.createElement('TR');
     tblB.appendChild(tr);
+
+    for (var j = 0; j < 10; j++) {
+        var td = document.createElement('TD')
+        tr.appendChild(td);
+    }
 }
+body.appendChild(table);
+
+
 //Add a column
 function addC() {
     alert("Clicked Add Col")
