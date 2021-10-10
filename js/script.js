@@ -5,6 +5,9 @@ let colorSelected;
 //get first element in the body
 var body = document.getElementsbyTagName("body")[0];
 
+//creating the table
+var table = document.createElement('TABLE');
+
 //Add a row
 function addR() {
     alert("Clicked Add Row")
