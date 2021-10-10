@@ -28,24 +28,23 @@ let table = document.createElement("table");
 //creating a table body
 let grid = document.getElementById("grid");
 
+//squares 
+let squares = document.getElementsByClassName("squares");
+
 //appending tablebody to the table
 grid.appendChild(table);
 
 //Add a row
 function addR() {
     alert("Clicked Add Row")
-    for (var i = 0; i < 10; i++)
-    var tr = document.createElement('TR');
-    tblB.appendChild(tr);
+    let newRow = document.createElement("tr");
+    newRow.classlist.add("row");
+    grid.appendChild(newRow);
 
-    for (var j = 0; j < 10; j++) {
-        var td = document.createElement('TD')
-        tr.appendChild(td);
+    for (var i = 0; i < squares; i++){
+        newRow.appendChild(createSquare("squares"));
     }
 }
-body.appendChild(table);
-
-
 //Add a column
 function addC() {
     alert("Clicked Add Col")
