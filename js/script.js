@@ -5,6 +5,9 @@ let colorSelected;
 //Add a row
 function addR() {
     alert("Clicked Add Row")
+    for (var i = 0; i < 10; i++)
+    var tr = document.createElement('TR');
+    tblB.appendChild(tr);
 }
 //Add a column
 function addC() {
