@@ -23,13 +23,13 @@ clearAllSquares.addEventListener("click", addR);
 addRow.addEventListener("click", clearAll);
 
 //creating the table
-var table = document.createElement('TABLE');
+let table = document.createElement("table");
 
 //creating a table body
-var tblB = document.createElement('TBODY');
+let grid = document.getElementById("grid");
 
 //appending tablebody to the table
-table.appendChild(tblB);
+grid.appendChild(table);
 
 //Add a row
 function addR() {
