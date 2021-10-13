@@ -125,4 +125,13 @@ function clearAll(){
 
 function fillU(){
     alert("Clicked Fill All Uncolored")
+    let newRow = document.getElementsByTagName("tr");
+    for(const element of newRow){
+        let col = element.getElementsByTagName("td");
+        for(let i = 0; i < numCols; i++){
+            if(col[i].style.background == ""){
+                col[i].style.background = colorSelected;
+            }
+        }
+    }
 }
