@@ -59,7 +59,18 @@ function addC() {
 //Remove a row
 function removeR() {
     alert("Clicked Remove Row")
+
+    if(numRows > 0){
+        if(numRows == 1){
+            numCols = 0;
+        }
+        numRows--;
+        let square = document.getElementById("square");
+        let newRow = square.lastElementChild;
+        square.removeChild(newRow);
+    }
 }
+
 //Remove a column
 function removeC() {
     alert("Clicked Remove Col")
