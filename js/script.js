@@ -3,15 +3,15 @@ let numCols = 0;
 let colorSelected; 
 //rememeber to use correct function names
 
-//create button functions
-addRow.addEventListener("click", addR);
-addCol.addEventListener("click", addC);
-removeRow.addEventListener("click", removeR);
-removeCol.addEventListener("click", removeC);
-fillColorAll.addEventListener("click", fillU);
-fillColor.addEventListener("click", fill);
-clearAllSquares.addEventListener("click", addR);
-addRow.addEventListener("click", clearAll);
+/*/create button functions
+addR.addEventListener("click", addR);
+addC.addEventListener("click", addC);
+removeR.addEventListener("click", removeR);
+removeC.addEventListener("click", removeC);
+fillU.addEventListener("click", fillU);
+fill.addEventListener("click", fill);
+clearAll.addEventListener("click", addR);
+addRow.addEventListener("click", clearAll); */
 
 //creating a table body
 let grid = document.getElementById("grid");
