@@ -101,8 +101,15 @@ function selected(){
     console.log(colorSelected);
 } //given code is okay
 
-function fill(){
+function fill(){ //this function is to fill sqaures with appropriate color
     alert("Clicked Fill All")
+    let newRow = document.getElementsByTagName("tr");
+    for(const element of newRow){
+        let col = element.getElementsByTagName("td");
+        for(let i = 0; i < numCols; i++){
+            col[i].style.background = colorSelected;
+        }
+    }
 }
 
 function clearAll(){
