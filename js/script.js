@@ -99,7 +99,7 @@ function removeC() {
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
     console.log(colorSelected);
-}
+} //given code is okay
 
 function fill(){
     alert("Clicked Fill All")
