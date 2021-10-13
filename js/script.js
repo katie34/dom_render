@@ -114,6 +114,13 @@ function fill(){ //this function is to fill sqaures with appropriate color
 
 function clearAll(){
     alert("Clicked Clear All")
+    let newRow = document.getElementsByTagName("tr");
+    for(const element of newRow){
+        let col = element.getElementsByTagName("td");
+        for(let i = 0; i < numCols; i++){
+            col[i].style.background = "";
+        }
+    }
 }
 
 function fillU(){
