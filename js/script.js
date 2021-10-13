@@ -74,7 +74,27 @@ function removeR() {
 //Remove a column
 function removeC() {
     alert("Clicked Remove Col")
+    let newRow;
+    if(numCols == 1){
+        let square = document.getElementById("square");
+        for(let i = 0; i < numRows; i++){
+            let newRow = square.lastElementChild;
+            square.removeChild(newRow);
+        }
+        numRows = 0;
+        numCols--;
+    }
+    if(numCols > 0){
+        numCols--;
+        newRow = document.getElementsByClassName("R");
+
+        for(let i = 0; i < numRows; i++){
+            let col = row[i].lastElementChild
+            newRow[i].removeChild(col);
+        }
+    }
 }
+
 //sets global var for selected color
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
