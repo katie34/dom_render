@@ -33,8 +33,8 @@ function addR() {
     for (let i = 0; i < numCols; i++){
         let square = document.createElement("td");
         square.classList.add("C")
-        newRow.appendChild(createSquare("square"));
-        HTMLFormControlsCollection.log(numCols);
+        newRow.appendChild(createSquare("square")); //does this need one parameter?
+        console.log(numCols);
     }
     document.getElementById("grid").appendChild(newRow);
 }
@@ -48,11 +48,11 @@ function addC() {
         numRows++;
         newRow = document.createElement("tr");
         newRow.classList.add("R");
-        document.getElementById("square").appendChild(newRow);
+        document.getElementById("grid").appendChild(newRow);
     }
     newRow = document.getElementsByClassName("R");
 
-    for(let i = 0; i < newRows; i++){ //creating a new column for each row
+    for(let i = 0; i < numRows; i++){ //creating a new column for each row
         let col = document.createElement("td");
         col.classList.add("C")
         newRow[i].appendChild(col);
