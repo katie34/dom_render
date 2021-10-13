@@ -26,6 +26,10 @@ function addR() {
     newRow.classlist.add("R");
     //grid.appendChild(newRow);
 
+    if(numCols === 0){
+        numCols++;
+    }
+
     for (let i = 0; i < numCols; i++){
         let square = document.createElement("td");
         square.classList.add("C")
