@@ -69,9 +69,9 @@ function removeR() {
             numCols = 0;
         }
         numRows--;
-        let square = document.getElementById("square");
-        let newRow = square.lastElementChild;
-        square.removeChild(newRow);
+        let grid = document.getElementById("grid"); //this needs to be changed to grid
+        let newRow = grid.lastElementChild;
+        grid.removeChild(newRow);
     }
 }
 
