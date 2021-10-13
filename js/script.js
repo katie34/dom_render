@@ -37,6 +37,23 @@ function addR() {
 //Add a column
 function addC() {
     alert("Clicked Add Col")
+    numCols++;
+    let newRow;
+
+    if(numRows === 0){ //conditional statement if no rows already exist
+        numRows++;
+        newRow = document.createElement("tr");
+        newRow.classList.add("R");
+        document.getElementById("square").appendChild(newRow);
+    }
+    newRow = document.getElementsByClassName("R");
+
+    for(let i = 0; i < newRows; i++){ //creating a new column for each row
+        let col = document.createElement("td");
+        col.classList.add("C")
+        newRow[i].appendChild(col);
+    }
+
 }
 
 //Remove a row
