@@ -8,7 +8,6 @@ let colorSelected;
 //let square = document.createElement("td");
 
 //Add a row
-//Add a row
 function addR() {
     //alert("Clicked Add Row")
     var table = document.getElementById("grid");
