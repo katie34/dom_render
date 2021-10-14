@@ -21,8 +21,8 @@ function addR() {
 
     }
     if(numRows > 0){
-    for(var i = 0; i < grid.rows[0].cells.length;i++){
-        cell = row.insertSquare(i);
+    for(var i = 0; i < grid.rows[0].cells.length; i++){
+        cell = row.insertCell(i);
         cell.style.backgroundColor = "transparent";
         cell.onclick = function(){
             this.style.backgroundColor = colorSelected;
@@ -62,16 +62,17 @@ function addC() {
 //Remove a row
 function removeR() {
     //alert("Clicked Remove Row")
-
-    if(numRows > 0){
+    let grid = document.getElementById("grid");
+    grid.deleteRow(grid.rows.length - 1);
+    numRows--;
+    /*if(numRows > 0){
         if(numRows == 1){
             numCols = 0;
         }
         numRows--;
         let grid = document.getElementById("grid"); //this needs to be changed to grid
         let newRow = grid.lastElementChild;
-        grid.removeChild(newRow);
-    }
+        grid.removeChild(newRow); */
 }
 
 //Remove a column
