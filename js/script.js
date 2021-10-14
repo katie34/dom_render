@@ -32,26 +32,31 @@ function addR() {
     numRows++;
 }
 
-/*/Add a column
+//Add a column
 function addC() {
     //alert("Clicked Add Col")
-    numCols++;
-    let newRow;
+    var grid = document.getElementById("grid");
+    //numCols++;
 
-    if(numRows === 0){ //conditional statement if no rows already exist
+    /*if(numRows === 0){ //conditional statement if no rows already exist
         numRows++;
         newRow = document.createElement("tr");
         newRow.classList.add("R");
         document.getElementById("grid").appendChild(newRow);
     }
-    newRow = document.getElementsByClassName("R");
+    newRow = document.getElementsByClassName("R"); */
 
-    for(let i = 0; i < numRows; i++){ //creating a new column for each row
-        let col = document.createElement("td");
+    for(var i = 0; i < grid.rows.length; i++){ //creating a new column for each row
+        cell = grid.rows[i].insertCell(grid.rows[i].cells.length);
+        cell.style.backgroundColor = "transparent";
+        cell.onclick =function(){
+            this.style.backgroundColor = colorSelected;
+        };
+        /*let col = document.createElement("td");
         col.classList.add("C")
-        newRow[i].appendChild(col);
+        newRow[i].appendChild(col);*/
     }
-
+    numCols++;
 }
 
 //Remove a row
@@ -132,4 +137,4 @@ function fillU(){
             }
         }
     }
-} */
+} 
