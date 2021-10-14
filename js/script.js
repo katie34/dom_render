@@ -1,17 +1,6 @@
 let numRows = 0;
 let numCols = 0;
 let colorSelected; 
-//rememeber to use correct function names
-
-/*/create button functions
-addR.addEventListener("click", addR);
-addC.addEventListener("click", addC);
-removeR.addEventListener("click", removeR);
-removeC.addEventListener("click", removeC);
-fillU.addEventListener("click", fillU);
-fill.addEventListener("click", fill);
-clearAll.addEventListener("click", addR);
-addRow.addEventListener("click", clearAll); */
 
 //creating a table body
 //let grid = document.getElementById("grid");
@@ -22,17 +11,18 @@ addRow.addEventListener("click", clearAll); */
 function addR() {
     //alert("Clicked Add Row")
     let grid = document.getElementById("grid");
-    var row = grid.insertRow(grid.rows.length);
+    let row = grid.insertRow(grid.rows.length);
     if(numRows == 0){
-    square = row.insertCell(-1);
+    square = row.insertSquare(-1);
     square.style.backgroundColor = "transparent";
     square.onclick = function(){
         this.style.backgroundColor = colorSelected;
     };
+
     }
     if(numRows > 0){
     for(var i = 0; i < grid.rows[0].squares.length;i++){
-        square = row.insertCell(i);
+        square = row.insertSquare(i);
         square.style.backgroundColor = "transparent";
         square.onclick = function(){
             this.style.backgroundColor = colorSelected;
@@ -41,7 +31,8 @@ function addR() {
     }
     numRows++;
 }
-//Add a column
+
+/*/Add a column
 function addC() {
     //alert("Clicked Add Col")
     numCols++;
@@ -141,4 +132,4 @@ function fillU(){
             }
         }
     }
-}
+} */
