@@ -8,19 +8,21 @@ let colorSelected;
 //let square = document.createElement("td");
 
 //Add a row
+//Add a row
 function addR() {
+    //alert("Clicked Add Row")
     var table = document.getElementById("grid");
-    var table_row = table.insertRow(table.rows.length);
-    if(numRows == 0){
-    cell = table_row.insertCell(-1);
+    var row = table.insertRow(table.rows.length);
+    if(numRows == 0) {
+    cell = row.insertCell(-1);
     cell.style.backgroundColor = "transparent";
     cell.onclick = function(){
         this.style.backgroundColor = colorSelected;
     };
     }
     if(numRows > 0){
-    for(var i = 0;i<table.rows[0].cells.length;i++){
-        cell = table_row.insertCell(i);
+    for(var i = 0; i < table.rows[0].cells.length; i++){
+        cell = row.insertCell(i);
         cell.style.backgroundColor = "transparent";
         cell.onclick = function(){
             this.style.backgroundColor = colorSelected;
@@ -30,62 +32,60 @@ function addR() {
     numRows++;
 }
 
-//Adds a column
-//iterates and inserts adjacent cell to each row
-//sets click function to each cell to change color
-//sets default color to transparent
+//Add a column
 function addC() {
+    //alert("Clicked Add Col")
     var table = document.getElementById("grid");
-    for (var i = 0; i < table.rows.length; i++) {
+    //numCols++;
+    for(var i = 0; i < table.rows.length; i++) { //creating a new column for each row
         cell = table.rows[i].insertCell(table.rows[i].cells.length);
         cell.style.backgroundColor = "transparent";
-        cell.onclick = function(){
+        cell.onclick = function() {
             this.style.backgroundColor = colorSelected;
         };
     }
     numCols++;
 }
 
-//Removes a row
-//deletes last row of table
+//Remove a row
 function removeR() {
+    //alert("Clicked Remove Row")
     let table = document.getElementById("grid");
     table.deleteRow(table.rows.length - 1);
     numRows--;
 }
+
 //Remove a column
-//iterate and delete last cell of each row
 function removeC() {
+    //alert("Clicked Remove Col")
     let table = document.getElementById("grid");
-    for (i = 0; i < table.rows.length; i++) {
-            table.rows[i].deleteCell(table.rows[i].cells.length - 1);
-        }
+    for(i = 0; i < table.rows.length; i++) {
+        table.rows[i].deleteCell(table.rows[i].cells.length - 1);
+        //grid.removeChild(newRow);
+    }
     numCols--;
 }
+
 //sets global var for selected color
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
-    console.log(colorSelected);   
-}
+    console.log(colorSelected);
+} //given code is okay
 
-
-
-
-//fill in all squares by selected color
-//select all cells by tag and then for each apply background color
-function fill(){
+function fill(){ //this function is to fill sqaures with appropriate color
+    //alert("Clicked Fill All")
     let table = document.querySelectorAll("td").forEach(td=> td.style.backgroundColor = document.getElementById("selectedID").value);
 }
 
-//clear all color and return to white
 function clearAll(){
+    //alert("Clicked Clear All")
     let table = document.querySelectorAll("td").forEach(td=> td.style.backgroundColor = "transparent");
 }
 
-//if cell is transparent which is default color then change color to selected color
 function fillU(){
+    //alert("Clicked Fill All Uncolored")
     var allCells = document.querySelectorAll("td");
-    for(var i = 0;i < allCells.length;i++){
+    for(var i = 0; i < allCells.length; i++){
         if(allCells[i].style.backgroundColor == "transparent"){
             allCells[i].style.backgroundColor = document.getElementById("selectedID").value;
         }
