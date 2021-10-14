@@ -10,21 +10,21 @@ let colorSelected;
 //Add a row
 function addR() {
     //alert("Clicked Add Row")
-    let grid = document.getElementById("grid");
-    let row = grid.insertRow(grid.rows.length);
+    var grid = document.getElementById("grid");
+    var row = grid.insertRow(grid.rows.length);
     if(numRows == 0){
-    square = row.insertSquare(-1);
-    square.style.backgroundColor = "transparent";
-    square.onclick = function(){
+    cell = row.insertCell(-1);
+    cell.style.backgroundColor = "transparent";
+    cell.onclick = function(){
         this.style.backgroundColor = colorSelected;
     };
 
     }
     if(numRows > 0){
-    for(var i = 0; i < grid.rows[0].squares.length;i++){
-        square = row.insertSquare(i);
-        square.style.backgroundColor = "transparent";
-        square.onclick = function(){
+    for(var i = 0; i < grid.rows[0].cells.length;i++){
+        cell = row.insertSquare(i);
+        cell.style.backgroundColor = "transparent";
+        cell.onclick = function(){
             this.style.backgroundColor = colorSelected;
         };
     }
