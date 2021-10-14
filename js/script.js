@@ -20,7 +20,7 @@ let square = document.createElement("td");
 
 //Add a row
 function addR() {
-    alert("Clicked Add Row")
+    //alert("Clicked Add Row")
     numRows++;
     let newRow = document.createElement("tr");
     newRow.classlist.add("R");
@@ -40,7 +40,7 @@ function addR() {
 }
 //Add a column
 function addC() {
-    alert("Clicked Add Col")
+    //alert("Clicked Add Col")
     numCols++;
     let newRow;
 
@@ -62,7 +62,7 @@ function addC() {
 
 //Remove a row
 function removeR() {
-    alert("Clicked Remove Row")
+    //alert("Clicked Remove Row")
 
     if(numRows > 0){
         if(numRows == 1){
@@ -77,7 +77,7 @@ function removeR() {
 
 //Remove a column
 function removeC() {
-    alert("Clicked Remove Col")
+    //alert("Clicked Remove Col")
     let newRow;
     if(numCols == 1){
         let grid = document.getElementById("grid");
@@ -106,7 +106,7 @@ function selected(){
 } //given code is okay
 
 function fill(){ //this function is to fill sqaures with appropriate color
-    alert("Clicked Fill All")
+    //alert("Clicked Fill All")
     let newRow = document.getElementsByTagName("tr");
     for(const element of newRow){
         let col = element.getElementsByTagName("td");
@@ -117,7 +117,7 @@ function fill(){ //this function is to fill sqaures with appropriate color
 }
 
 function clearAll(){
-    alert("Clicked Clear All")
+    //alert("Clicked Clear All")
     let newRow = document.getElementsByTagName("tr");
     for(const element of newRow){
         let col = element.getElementsByTagName("td");
@@ -128,7 +128,7 @@ function clearAll(){
 }
 
 function fillU(){
-    alert("Clicked Fill All Uncolored")
+    //alert("Clicked Fill All Uncolored")
     let newRow = document.getElementsByTagName("tr");
     for(const element of newRow){
         let col = element.getElementsByTagName("td");
