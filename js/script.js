@@ -46,10 +46,10 @@ function addC() {
     }
     newRow = document.getElementsByClassName("R"); */
 
-    for(var i = 0; i < grid.rows.length; i++){ //creating a new column for each row
+    for(var i = 0; i < grid.rows.length; i++) { //creating a new column for each row
         cell = grid.rows[i].insertCell(grid.rows[i].cells.length);
         cell.style.backgroundColor = "transparent";
-        cell.onclick =function(){
+        cell.onclick = function() {
             this.style.backgroundColor = colorSelected;
         };
         /*let col = document.createElement("td");
@@ -79,9 +79,9 @@ function removeR() {
 function removeC() {
     //alert("Clicked Remove Col")
     let grid = document.getElementById("grid");
-        for(let i = 0; i < grid.rows.length; i++) {
-            grid.rows[i].deleteCell(table.rows[i].cells.length - 1);
-            grid.removeChild(newRow);
+        for(i = 0; i < grid.rows.length; i++) {
+            grid.rows[i].deleteCell(grid.rows[i].cells.length - 1);
+            //grid.removeChild(newRow);
         }
         numCols--;
 }
