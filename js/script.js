@@ -80,10 +80,10 @@ function removeC() {
     alert("Clicked Remove Col")
     let newRow;
     if(numCols == 1){
-        let square = document.getElementById("square");
+        let grid = document.getElementById("grid");
         for(let i = 0; i < numRows; i++){
-            let newRow = square.lastElementChild;
-            square.removeChild(newRow);
+            let newRow = grid.lastElementChild;
+            grid.removeChild(newRow);
         }
         numRows = 0;
         numCols--;
@@ -93,7 +93,7 @@ function removeC() {
         newRow = document.getElementsByClassName("R");
 
         for(let i = 0; i < numRows; i++){
-            let col = row[i].lastElementChild
+            let col = newRow[i].lastElementChild
             newRow[i].removeChild(col);
         }
     }
