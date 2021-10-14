@@ -14,29 +14,32 @@ clearAll.addEventListener("click", addR);
 addRow.addEventListener("click", clearAll); */
 
 //creating a table body
-let grid = document.getElementById("grid");
-let newRow = document.createElement("tr");
-let square = document.createElement("td");
+//let grid = document.getElementById("grid");
+//let newRow = document.createElement("tr");
+//let square = document.createElement("td");
 
 //Add a row
 function addR() {
     //alert("Clicked Add Row")
+    let grid = document.getElementById("grid");
+    var row = grid.insertRow(grid.rows.length);
+    if(numRows == 0){
+    square = row.insertCell(-1);
+    square.style.backgroundColor = "transparent";
+    square.onclick = function(){
+        this.style.backgroundColor = colorSelected;
+    };
+    }
+    if(numRows > 0){
+    for(var i = 0; i < grid.rows[0].squares.length;i++){
+        square = row.insertCell(i);
+        square.style.backgroundColor = "transparent";
+        square.onclick = function(){
+            this.style.backgroundColor = colorSelected;
+        };
+    }
+    }
     numRows++;
-    let newRow = document.createElement("tr");
-    newRow.classlist.add("R");
-    //grid.appendChild(newRow);
-
-    if(numCols === 0){
-        numCols++;
-    }
-
-    for (let i = 0; i < numCols; i++){
-        let square = document.createElement("td");
-        square.classList.add("C")
-        newRow.appendChild(createSquare("square")); //does this need one parameter?
-        console.log(numCols);
-    }
-    document.getElementById("grid").appendChild(newRow);
 }
 //Add a column
 function addC() {
