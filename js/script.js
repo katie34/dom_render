@@ -106,24 +106,20 @@ function fill(){ //this function is to fill sqaures with appropriate color
 
 function clearAll(){
     //alert("Clicked Clear All")
-    let newRow = document.getElementsByTagName("tr");
+    let grid = document.querySelectorAll("td").forEach(td=> td.style.backgroundColor = "transparent");
+    /*let newRow = document.getElementsByTagName("tr");
     for(const element of newRow){
         let col = element.getElementsByTagName("td");
         for(let i = 0; i < numCols; i++){
-            col[i].style.background = "";
-        }
-    }
+            col[i].style.background = "";*/
 }
 
 function fillU(){
     //alert("Clicked Fill All Uncolored")
-    let newRow = document.getElementsByTagName("tr");
-    for(const element of newRow){
-        let col = element.getElementsByTagName("td");
-        for(let i = 0; i < numCols; i++){
-            if(col[i].style.background == ""){
-                col[i].style.background = colorSelected;
-            }
+    var allCells = document.querySelectorAll("td");
+    for(var i = 0; i < allCells.length; i++){
+        if(allCells[i].style.backgroundColor == "transparent"){
+            allCells[i].style.backgroundColor = document.getElementById("selectedID").value;
         }
     }
-} 
+}
