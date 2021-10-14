@@ -78,25 +78,12 @@ function removeR() {
 //Remove a column
 function removeC() {
     //alert("Clicked Remove Col")
-    let newRow;
-    if(numCols == 1){
-        let grid = document.getElementById("grid");
-        for(let i = 0; i < numRows; i++){
-            let newRow = grid.lastElementChild;
+    let grid = document.getElementById("grid");
+        for(let i = 0; i < grid.rows.length; i++) {
+            grid.rows[i].deleteCell(table.rows[i].cells.length - 1);
             grid.removeChild(newRow);
         }
-        numRows = 0;
         numCols--;
-    }
-    if(numCols > 0){
-        numCols--;
-        newRow = document.getElementsByClassName("R");
-
-        for(let i = 0; i < numRows; i++){
-            let col = newRow[i].lastElementChild
-            newRow[i].removeChild(col);
-        }
-    }
 }
 
 //sets global var for selected color
