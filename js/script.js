@@ -10,8 +10,8 @@ let colorSelected;
 //Add a row
 function addR() {
     //alert("Clicked Add Row")
-    var grid = document.getElementById("grid");
-    var row = grid.insertRow(grid.rows.length);
+    var table = document.getElementById("grid");
+    var row = table.insertRow(table.rows.length);
     if(numRows == 0){
     cell = row.insertCell(-1);
     cell.style.backgroundColor = "transparent";
@@ -20,7 +20,7 @@ function addR() {
     };
     }
     if(numRows > 0){
-    for(var i = 0; i < grid.rows[0].cells.length; i++){
+    for(var i = 0; i < table.rows[0].cells.length; i++){
         cell = row.insertCell(i);
         cell.style.backgroundColor = "transparent";
         cell.onclick = function(){
@@ -34,10 +34,10 @@ function addR() {
 //Add a column
 function addC() {
     //alert("Clicked Add Col")
-    var grid = document.getElementById("grid");
+    var table = document.getElementById("grid");
     //numCols++;
-    for(var i = 0; i < grid.rows.length; i++) { //creating a new column for each row
-        cell = grid.rows[i].insertCell(grid.rows[i].cells.length);
+    for(var i = 0; i < table.rows.length; i++) { //creating a new column for each row
+        cell = table.rows[i].insertCell(table.rows[i].cells.length);
         cell.style.backgroundColor = "transparent";
         cell.onclick = function() {
             this.style.backgroundColor = colorSelected;
@@ -49,17 +49,17 @@ function addC() {
 //Remove a row
 function removeR() {
     //alert("Clicked Remove Row")
-    let grid = document.getElementById("grid");
-    grid.deleteRow(grid.rows.length - 1);
+    let table = document.getElementById("grid");
+    table.deleteRow(table.rows.length - 1);
     numRows--;
 }
 
 //Remove a column
 function removeC() {
     //alert("Clicked Remove Col")
-    let grid = document.getElementById("grid");
-    for(i = 0; i < grid.rows.length; i++) {
-        grid.rows[i].deleteCell(grid.rows[i].cells.length - 1);
+    let table = document.getElementById("grid");
+    for(i = 0; i < table.rows.length; i++) {
+        table.rows[i].deleteCell(table.rows[i].cells.length - 1);
         //grid.removeChild(newRow);
     }
     numCols--;
@@ -73,12 +73,12 @@ function selected(){
 
 function fill(){ //this function is to fill sqaures with appropriate color
     //alert("Clicked Fill All")
-    let grid = document.querySelectorAll("td").forEach(td=> td.style.backgroundColor = document.getElementById("selectedID").value);
+    let table = document.querySelectorAll("td").forEach(td=> td.style.backgroundColor = document.getElementById("selectedID").value);
 }
 
 function clearAll(){
     //alert("Clicked Clear All")
-    let grid = document.querySelectorAll("td").forEach(td=> td.style.backgroundColor = "transparent");
+    let table = document.querySelectorAll("td").forEach(td=> td.style.backgroundColor = "transparent");
 }
 
 function fillU(){
